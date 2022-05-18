@@ -12,3 +12,17 @@ C:\Git\MP\containers\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.cs
 C:\Git\MP\containers\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.dll
 C:\Git\MP\containers\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.pdb
 C:\Git\MP\containers\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.genruntimeconfig.cache
+C:\Git\MP\kontejnery\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.exe
+C:\Git\MP\kontejnery\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.deps.json
+C:\Git\MP\kontejnery\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.runtimeconfig.json
+C:\Git\MP\kontejnery\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.runtimeconfig.dev.json
+C:\Git\MP\kontejnery\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.dll
+C:\Git\MP\kontejnery\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.pdb
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.csproj.AssemblyReference.cache
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.AssemblyInfoInputs.cache
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.AssemblyInfo.cs
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.csproj.CoreCompileInputs.cache
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.dll
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.pdb
+C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.genruntimeconfig.cache
