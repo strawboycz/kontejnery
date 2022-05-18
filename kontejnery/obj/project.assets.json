@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\MP\\containers\\kontejnery\\kontejnery\\kontejnery.csproj",
+      "projectUniqueName": "C:\\Git\\MP\\kontejnery\\kontejnery\\kontejnery.csproj",
       "projectName": "kontejnery",
-      "projectPath": "C:\\Git\\MP\\containers\\kontejnery\\kontejnery\\kontejnery.csproj",
+      "projectPath": "C:\\Git\\MP\\kontejnery\\kontejnery\\kontejnery.csproj",
       "packagesPath": "C:\\Users\\Mirek\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\MP\\containers\\kontejnery\\kontejnery\\obj\\",
+      "outputPath": "C:\\Git\\MP\\kontejnery\\kontejnery\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
