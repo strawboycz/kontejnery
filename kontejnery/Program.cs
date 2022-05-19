@@ -25,13 +25,13 @@ namespace kontejnery
 								{
 										box = GetRandomBox();
 										var result = AddBoxOrDumpBox(containers[i], box, UnusedBoxes);
-										if (result == true)
+										/*if (result == true)
 												Console.WriteLine($"{box}\nhas been inserted into\n{containers[i]}\n");
 										else
-												Console.WriteLine($"{box}\n does not fit into \n{containers[i]}\n");
+												Console.WriteLine($"{box}\n does not fit into \n{containers[i]}\n");*/
 
 								}
-								Console.WriteLine($"\nNo more boxes can fit into \n{containers[i]}");
+								//Console.WriteLine($"\nNo more boxes can fit into \n{containers[i]}");
 						}
 
 						// Table of Containers

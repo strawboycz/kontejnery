@@ -28,6 +28,14 @@ namespace kontejnery
 						}
 				}
 
+				public bool RemoveBox(Box box)
+				{
+					if (Boxes.Contains(box))
+						return false;
+					Boxes.Remove(box);
+					return true;
+				}
+
 				public override string ToString()
 				{
 						return $"Container {ID} Volume left: {VolumeLeft}/{Volume} Weight: {Weight} Contains: {Boxes.Count} boxes.";
