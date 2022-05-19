@@ -3,62 +3,77 @@ using System.Collections.Generic;
 
 namespace kontejnery
 {
-	internal class Program
-	{
-		public const int RandomBoxLower = 50;
-		public const int RandomBoxUpper = 100;
-		public const int RandomContainerLower = 500;
-		public const int RandomContainerUpper = 1000;
-
-		
-		static void Main(string[] args)
+		internal class Program
 		{
-			List<Box> UnusedBoxes = new List<Box>();
-			Container container = GetRandomContainer();
+				public const int RandomBoxLower = 50;
+				public const int RandomBoxUpper = 100;
+				public const int RandomContainerLower = 500;
+				public const int RandomContainerUpper = 1000;
 
-			Box box = new Box(0,0,0,0);
-			while (IsContainerNotFull(container))
-			{
-				box = GetRandomBox();
-				var result = AddBoxOrDumpBox(container, box, UnusedBoxes);
-				Console.WriteLine(result);
-			}
 
-			Console.WriteLine($"\n\n\nNo more boxes can fit into \n{container}");
-			
-		}
+				static void Main(string[] args)
+				{
+						List<Box> UnusedBoxes = new List<Box>();
+						List<Container> containers = new List<Container>();
 
-		private static string AddBoxOrDumpBox(Container container, Box box, List<Box> trash)
-		{
-			if (DoesBoxFitIntoContainer(container, box))
-			{
-				container.AddBox(box);
-				return $"{box}\nhas been inserted into\n{container}\n";
-			}
-			trash.Add(box);
-			return $"{box}\n does not fit into \n{container}";
-			
-		}
 
-		private static bool DoesBoxFitIntoContainer(Container container, Box box)
-		{
-			return container.CurrentVolume >= box.Volume;
-		}
+						Box box = new Box(0, 0, 0, 0);
+						for (int i = 0; i < 3; i++)
+						{
+								containers.Add(GetRandomContainer());
+								while (IsContainerNotFull(containers[i]))
+								{
+										box = GetRandomBox();
+										var result = AddBoxOrDumpBox(containers[i], box, UnusedBoxes);
+										if (result == true)
+												Console.WriteLine($"{box}\nhas been inserted into\n{containers[i]}\n");
+										else
+												Console.WriteLine($"{box}\n does not fit into \n{containers[i]}\n");
 
-		private static bool IsContainerNotFull(Container container)
-		{
-			return container.CurrentVolume>= Math.Pow(RandomBoxLower,3);
-		}
+								}
+								Console.WriteLine($"\nNo more boxes can fit into \n{containers[i]}");
+						}
 
-		public static Container GetRandomContainer()
-		{
-			Random rnd = new Random();
-			return new Container(rnd.Next(RandomContainerLower, RandomContainerUpper), rnd.Next(RandomContainerLower, RandomContainerUpper), rnd.Next(RandomContainerLower, RandomContainerUpper), rnd.Next(RandomContainerLower, RandomContainerUpper));
+						// Table of Containers
+						Console.WriteLine("\t\tContainer Id\t\t\tContainer Weight\tNumber of boxes");
+						Console.WriteLine("\t\t------------\t\t\t----------------\t---------------");
+						foreach (Container container in containers)
+						{
+							Console.WriteLine($"\t{container.ID}\t      {container.Weight}\t\t      {container.Boxes.Count}");
+						}
+				}
+
+				private static bool AddBoxOrDumpBox(Container container, Box box, List<Box> trash)
+				{
+						if (DoesBoxFitIntoContainer(container, box))
+						{
+								container.AddBox(box);
+								return true;
+						}
+						trash.Add(box);
+						return false;
+
+				}
+
+				private static bool DoesBoxFitIntoContainer(Container container, Box box)
+				{
+						return container.VolumeLeft >= box.Volume;
+				}
+
+				private static bool IsContainerNotFull(Container container)
+				{
+						return container.VolumeLeft >= Math.Pow(RandomBoxLower, 3);
+				}
+
+				public static Container GetRandomContainer()
+				{
+						Random rnd = new Random();
+						return new Container(rnd.Next(RandomContainerLower, RandomContainerUpper), rnd.Next(RandomContainerLower, RandomContainerUpper), rnd.Next(RandomContainerLower, RandomContainerUpper), rnd.Next(RandomContainerLower, RandomContainerUpper));
+				}
+				public static Box GetRandomBox()
+				{
+						Random rnd = new Random();
+						return new Box(rnd.Next(RandomBoxLower, RandomBoxUpper), rnd.Next(RandomBoxLower, RandomBoxUpper), rnd.Next(RandomBoxLower, RandomBoxUpper), rnd.Next(RandomBoxLower, RandomBoxUpper));
+				}
 		}
-		public static Box GetRandomBox()
-		{
-			Random rnd = new Random();
-			return new Box(rnd.Next(RandomBoxLower, RandomBoxUpper), rnd.Next(RandomBoxLower, RandomBoxUpper), rnd.Next(RandomBoxLower, RandomBoxUpper), rnd.Next(RandomBoxLower, RandomBoxUpper));
-		}
-	}
 }

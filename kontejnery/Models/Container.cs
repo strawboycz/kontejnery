@@ -8,28 +8,29 @@ namespace kontejnery
 		{
 				public List<Box> Boxes { get; private set; } = new List<Box>();
 
-				public int CurrentVolume { get; private set; }
+				public int VolumeLeft { get; private set; }
 
 
 
 				public Container(int height, int width, int depth, int weight) : base(height, width, depth, weight)
 				{
-						CurrentVolume = Volume;
+						VolumeLeft = Volume;
 				}
 
 
 				public void AddBox(Box box)
 				{
-						if (CurrentVolume >= box.Volume)
+						if (VolumeLeft >= box.Volume)
 						{
 								Boxes.Add(box);
-								CurrentVolume -= box.Volume;
+								VolumeLeft -= box.Volume;
+								Weight += box.Weight;
 						}
 				}
 
 				public override string ToString()
 				{
-						return $"Container {ID} Volume left: {CurrentVolume}/{Volume} Contains: {Boxes.Count} boxes.";
+						return $"Container {ID} Volume left: {VolumeLeft}/{Volume} Weight: {Weight} Contains: {Boxes.Count} boxes.";
 				}
 		}
 }
