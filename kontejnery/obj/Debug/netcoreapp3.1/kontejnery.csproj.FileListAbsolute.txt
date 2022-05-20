@@ -26,3 +26,17 @@ C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.csproj.CoreCo
 C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.dll
 C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.pdb
 C:\Git\MP\kontejnery\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.genruntimeconfig.cache
+C:\Git\strawboycz\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.exe
+C:\Git\strawboycz\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.deps.json
+C:\Git\strawboycz\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.runtimeconfig.json
+C:\Git\strawboycz\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.runtimeconfig.dev.json
+C:\Git\strawboycz\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.dll
+C:\Git\strawboycz\kontejnery\bin\Debug\netcoreapp3.1\kontejnery.pdb
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.csproj.AssemblyReference.cache
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.AssemblyInfoInputs.cache
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.AssemblyInfo.cs
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.csproj.CoreCompileInputs.cache
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.dll
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.pdb
+C:\Git\strawboycz\kontejnery\obj\Debug\netcoreapp3.1\kontejnery.genruntimeconfig.cache

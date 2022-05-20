@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 namespace kontejnery
 {
+
 		internal class Program
 		{
+
+				public static List<string> ListOfContainerIds = new List<string>();
 				public const int RandomBoxLower = 50;
 				public const int RandomBoxUpper = 100;
 				public const int RandomContainerLower = 500;
@@ -39,7 +42,7 @@ namespace kontejnery
 						Console.WriteLine("\t\t------------\t\t\t----------------\t---------------");
 						foreach (Container container in containers)
 						{
-							Console.WriteLine($"\t{container.ID}\t      {container.Weight}\t\t      {container.Boxes.Count}");
+							Console.WriteLine($"\t{container.CustomId}\t\t      {container.Weight}\t\t      {container.Boxes.Count}");
 						}
 				}
 

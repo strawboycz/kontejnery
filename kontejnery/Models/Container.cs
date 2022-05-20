@@ -10,7 +10,18 @@ namespace kontejnery
 
 				public int VolumeLeft { get; private set; }
 
+				public string CustomId { get; private set; } = GenerateId();
 
+				private static string GenerateId()
+				{
+					Random rnd = new Random(DateTime.Now.Millisecond);
+					var generation = $"{rnd.Next(0, 9)}-{rnd.Next(0, 9)}{rnd.Next(0, 9)}";
+					while (Program.ListOfContainerIds.Contains(generation))
+					{
+						generation = $"{rnd.Next(0, 9)}-{rnd.Next(0, 9)}{rnd.Next(0, 9)}";
+					}
+					return generation;
+				}
 
 				public Container(int height, int width, int depth, int weight) : base(height, width, depth, weight)
 				{
