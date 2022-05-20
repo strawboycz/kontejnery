@@ -9,7 +9,6 @@ namespace kontejnery
 
 		public bool AddContainer(Container container)
 		{
-			if (Containers.Count >= 10) return false;
 			if (Containers.Contains(container)) return false;
 			Containers.Add(container);
 			return true;
