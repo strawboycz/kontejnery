@@ -8,24 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Mirek\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Keen Mate\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\MP\\kontejnery\\kontejnery\\kontejnery.csproj",
+      "projectUniqueName": "C:\\Git\\strawboycz\\kontejnery\\kontejnery.csproj",
       "projectName": "kontejnery",
-      "projectPath": "C:\\Git\\MP\\kontejnery\\kontejnery\\kontejnery.csproj",
-      "packagesPath": "C:\\Users\\Mirek\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\MP\\kontejnery\\kontejnery\\obj\\",
+      "projectPath": "C:\\Git\\strawboycz\\kontejnery\\kontejnery.csproj",
+      "packagesPath": "C:\\Users\\Keen Mate\\.nuget\\packages\\",
+      "outputPath": "C:\\Git\\strawboycz\\kontejnery\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Mirek\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Keen Mate\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -65,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

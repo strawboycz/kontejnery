@@ -47,7 +47,7 @@ namespace kontejnery
 						port.AddShip(ship1, new Random(DateTime.Now.Millisecond).Next(100,450));
 						port.AddShip(ship2, new Random(DateTime.Now.Millisecond).Next(100,450));
 						port.AddShip(ship3, new Random(DateTime.Now.Millisecond).Next(100,450));
-
+						port.MoveContainer(ship1, ship1.Containers[0],ship2);
 						foreach (Ship ship in port.Ships)
 						{
 							Console.WriteLine(ship);

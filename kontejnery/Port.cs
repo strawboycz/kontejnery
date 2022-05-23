@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Threading;
 using kontejnery;
 
 namespace kontejnery
@@ -11,13 +13,35 @@ namespace kontejnery
 				public bool AddShip(Ship ship, int distanceFromPerviousShip)
 				{
 						if (Ships.Contains(ship)) return false;
-						if(Ships.Count == 0) Ships.Add(ship);
+						if (Ships.Count == 0) Ships.Add(ship);
 						else
 						{
-							Ships.Add(ship);
-							Distances.Add(distanceFromPerviousShip);
+								Ships.Add(ship);
+								Distances.Add(distanceFromPerviousShip);
 						}
 						return true;
+				}
+
+				public int GetTimeToMove(Ship firtShip, Ship secondShip)
+				{
+						if (!(Ships.Contains(firtShip) && Ships.Contains(secondShip)))
+								throw new Exception();
+						int firstShipLocation = Ships.IndexOf(firtShip);
+						int secondShipLocation = Ships.IndexOf(secondShip);
+						int time = new int();
+						for (int i = firstShipLocation; i < secondShipLocation; i++)
+						{
+							time += Distances[i];
+						}
+						return time;
+				}
+
+				public void MoveContainer(Ship firstShip ,Container container, Ship secondShip)
+				{
+					Thread.Sleep(GetTimeToMove(firstShip, secondShip));
+					int locationOfContainer = firstShip.Containers.IndexOf(container);
+					firstShip.Containers.RemoveAt(locationOfContainer);
+					secondShip.AddContainer(container);
 				}
 		}
 
