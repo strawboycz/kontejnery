@@ -50,6 +50,12 @@ namespace kontejnery
 						port.MoveContainer(ship1, ship1.Containers[0],ship2);
 						foreach (Ship ship in port.Ships)
 						{
+							
+							if (ship.Containers.Count>0)
+							{
+								Console.WriteLine($"Ship {port.Ships.IndexOf(ship) + 1}:");
+								Console.WriteLine();
+							}
 							Console.WriteLine(ship);
 						}
 

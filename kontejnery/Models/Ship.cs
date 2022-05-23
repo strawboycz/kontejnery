@@ -18,13 +18,15 @@ namespace kontejnery
 				public override string ToString()
 				{
 						// Table of Containers
+						if (Containers.Count <= 0)
+							return string.Empty;
 						Console.WriteLine("Container Id\tContainer Weight\tNumber of boxes");
 						Console.WriteLine("------------\t----------------\t---------------");
 						foreach (Container container in Containers)
 						{
 								Console.WriteLine($"   {container.CustomId}\t\t      {container.Weight}\t\t      {container.Boxes.Count}");
 						}
-						return "";
+						return string.Empty;
 				}
 		}
 }
