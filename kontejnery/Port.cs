@@ -40,8 +40,9 @@ namespace kontejnery
 				{
 						if (!firstShip.Containers.Contains(container))
 								throw new Exception();
-
-						Thread.Sleep(GetTimeToMove(firstShip, secondShip));
+						int timeToMove = GetTimeToMove(firstShip, secondShip);
+						Thread.Sleep(timeToMove);
+						Console.WriteLine($"Moving the container took {timeToMove} ms");
 						int locationOfContainer = firstShip.Containers.IndexOf(container);
 						firstShip.Containers.RemoveAt(locationOfContainer);
 						secondShip.AddContainer(container);
