@@ -31,17 +31,20 @@ namespace kontejnery
 						int time = new int();
 						for (int i = firstShipLocation; i < secondShipLocation; i++)
 						{
-							time += Distances[i];
+								time += Distances[i];
 						}
 						return time;
 				}
 
-				public void MoveContainer(Ship firstShip ,Container container, Ship secondShip)
+				public void MoveContainer(Ship firstShip, Container container, Ship secondShip)
 				{
-					Thread.Sleep(GetTimeToMove(firstShip, secondShip));
-					int locationOfContainer = firstShip.Containers.IndexOf(container);
-					firstShip.Containers.RemoveAt(locationOfContainer);
-					secondShip.AddContainer(container);
+						if (!firstShip.Containers.Contains(container))
+								throw new Exception();
+
+						Thread.Sleep(GetTimeToMove(firstShip, secondShip));
+						int locationOfContainer = firstShip.Containers.IndexOf(container);
+						firstShip.Containers.RemoveAt(locationOfContainer);
+						secondShip.AddContainer(container);
 				}
 		}
 
