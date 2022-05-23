@@ -37,13 +37,23 @@ namespace kontejnery
 								//Console.WriteLine($"\nNo more boxes can fit into \n{containers[i]}");
 						}
 
-						// Table of Containers
-						Console.WriteLine("\t\tContainer Id\t\t\tContainer Weight\tNumber of boxes");
-						Console.WriteLine("\t\t------------\t\t\t----------------\t---------------");
-						foreach (Container container in containers)
+						Ship ship1 = new Ship();
+						ship1.AddContainer(containers[0]);
+						Ship ship2 = new Ship();
+						ship2.AddContainer(containers[1]);
+						Ship ship3 = new Ship();
+						ship3.AddContainer(containers[2]);
+						Port port = new Port();
+						port.AddShip(ship1, new Random(DateTime.Now.Millisecond).Next(100,450));
+						port.AddShip(ship2, new Random(DateTime.Now.Millisecond).Next(100,450));
+						port.AddShip(ship3, new Random(DateTime.Now.Millisecond).Next(100,450));
+
+						foreach (Ship ship in port.Ships)
 						{
-							Console.WriteLine($"\t{container.CustomId}\t\t      {container.Weight}\t\t      {container.Boxes.Count}");
+							Console.WriteLine(ship);
 						}
+
+
 				}
 
 				private static bool AddBoxOrDumpBox(Container container, Box box, List<Box> trash)

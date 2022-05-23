@@ -15,10 +15,10 @@ namespace kontejnery
 				private static string GenerateId()
 				{
 					Random rnd = new Random(DateTime.Now.Millisecond);
-					var generation = $"{rnd.Next(0, 9)}-{rnd.Next(0, 9)}{rnd.Next(0, 9)}";
+					var generation = $"{rnd.Next(0, 10)}-{rnd.Next(0, 10)}{rnd.Next(0, 10)}";
 					while (Program.ListOfContainerIds.Contains(generation))
 					{
-						generation = $"{rnd.Next(0, 9)}-{rnd.Next(0, 9)}{rnd.Next(0, 9)}";
+						generation = $"{rnd.Next(0, 10)}-{rnd.Next(0, 10)}{rnd.Next(0, 10)}";
 					}
 					return generation;
 				}
