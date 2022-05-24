@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using kontejnery.Helpers;
 
 namespace kontejnery
 {
@@ -47,7 +48,19 @@ namespace kontejnery
 						port.AddShip(ship1, new Random(DateTime.Now.Millisecond).Next(100,450));
 						port.AddShip(ship2, new Random(DateTime.Now.Millisecond).Next(100,450));
 						port.AddShip(ship3, new Random(DateTime.Now.Millisecond).Next(100,450));
-						port.MoveContainer(ship1, ship1.Containers[0],ship2);
+						//port.MoveContainer(ship1, ship1.Containers[0],ship2);
+
+						var action = "";
+						while (action != "1" && action != "2" && action != "3")
+						{
+							Console.Write($"Choose an action:");
+							action = Console.ReadLine();
+							if (action.ToUpper() == Texts.helpString1.ToUpper() || action.ToUpper() == Texts.helpString2.ToUpper())
+							{
+								Console.WriteLine(Texts.helpToPrint);
+							}
+						}
+
 						foreach (Ship ship in port.Ships)
 						{
 							
