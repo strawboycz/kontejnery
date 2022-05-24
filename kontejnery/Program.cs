@@ -121,6 +121,10 @@ namespace kontejnery
 												}
 												port.MoveContainer(shipContainingContainer, selectedContiner, port.Ships[0]);
 												break;
+										default:
+											Console.WriteLine("This action does not exist");
+											continue;
+											break;
 								}
 						}
 
