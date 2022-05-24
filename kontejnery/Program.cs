@@ -45,32 +45,44 @@ namespace kontejnery
 						Ship ship3 = new Ship();
 						ship3.AddContainer(containers[2]);
 						Port port = new Port();
-						port.AddShip(ship1, new Random(DateTime.Now.Millisecond).Next(100,450));
-						port.AddShip(ship2, new Random(DateTime.Now.Millisecond).Next(100,450));
-						port.AddShip(ship3, new Random(DateTime.Now.Millisecond).Next(100,450));
+						port.AddShip(ship1, new Random(DateTime.Now.Millisecond).Next(100, 450));
+						port.AddShip(ship2, new Random(DateTime.Now.Millisecond).Next(100, 450));
+						port.AddShip(ship3, new Random(DateTime.Now.Millisecond).Next(100, 450));
 						//port.MoveContainer(ship1, ship1.Containers[0],ship2);
 
-						var action = "";
-						while (action != "1" && action != "2" && action != "3")
+						while (true)
 						{
-							Console.Write($"Choose an action:");
-							action = Console.ReadLine();
-							if (action.ToUpper() == Texts.helpString1.ToUpper() || action.ToUpper() == Texts.helpString2.ToUpper())
-							{
-								Console.WriteLine(Texts.helpToPrint);
-							}
+								Console.Write($"Choose an action:");
+								var action = Console.ReadLine();
+								if (action.ToUpper() == Texts.helpString1.ToUpper() || action.ToUpper() == Texts.helpString2.ToUpper())
+								{
+										Console.WriteLine(Texts.helpToPrint);
+										continue;
+								}
+								switch (action)
+								{
+										case "1":
+												foreach (Ship ship in port.Ships)
+												{
+
+														if (ship.Containers.Count > 0)
+														{
+																Console.WriteLine($"Ship {port.Ships.IndexOf(ship) + 1}:");
+																Console.WriteLine();
+														}
+														Console.WriteLine(ship);
+												}
+												break;
+										case "2":
+
+												break;
+										case "3":
+
+												break;
+								}
 						}
 
-						foreach (Ship ship in port.Ships)
-						{
-							
-							if (ship.Containers.Count>0)
-							{
-								Console.WriteLine($"Ship {port.Ships.IndexOf(ship) + 1}:");
-								Console.WriteLine();
-							}
-							Console.WriteLine(ship);
-						}
+
 
 
 				}
