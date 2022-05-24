@@ -38,11 +38,11 @@ namespace kontejnery
 								//Console.WriteLine($"\nNo more boxes can fit into \n{containers[i]}");
 						}
 
-						Ship ship1 = new Ship();
+						Ship ship1 = new Ship("ship1");
 						ship1.AddContainer(containers[0]);
-						Ship ship2 = new Ship();
+						Ship ship2 = new Ship("ship2");
 						ship2.AddContainer(containers[1]);
-						Ship ship3 = new Ship();
+						Ship ship3 = new Ship("ship3");
 						ship3.AddContainer(containers[2]);
 						Port port = new Port();
 						port.AddShip(ship1, new Random(DateTime.Now.Millisecond).Next(100, 450));
@@ -74,7 +74,26 @@ namespace kontejnery
 												}
 												break;
 										case "2":
+												Console.Write("Enter ID of container you want to move:");
+												var selectedId = Console.ReadLine();
+												var selectedContiner = port.findContainerById(selectedId);
+												if (selectedContiner == null)
+												{
+													Console.WriteLine("This ID does not exist");
+													continue;
+												}
 
+												Console.Write("Enter name of ship you want the container moved to:");
+												var selectedShipName = Console.ReadLine();
+												var selectedShip = port.findShipByName(selectedShipName);
+												if (selectedShip == null)
+												{
+													Console.WriteLine("This name does not exist");
+													continue;
+												}
+
+												var shipContainingContainer = port.findShipByContainer(selectedContiner);
+												port.MoveContainer(shipContainingContainer,selectedContiner,selectedShip);
 												break;
 										case "3":
 

@@ -6,6 +6,12 @@ namespace kontejnery
 {
 		public class Ship
 		{
+				public Ship(string name)
+				{
+						Name = name;
+				}
+
+				public string Name { get; private set; }
 				public List<Container> Containers { get; private set; } = new List<Container>();
 
 				public bool AddContainer(Container container)
@@ -19,7 +25,7 @@ namespace kontejnery
 				{
 						// Table of Containers
 						if (Containers.Count <= 0)
-							return string.Empty;
+								return string.Empty;
 						Console.WriteLine("Container Id\tContainer Weight\tNumber of boxes");
 						Console.WriteLine("------------\t----------------\t---------------");
 						foreach (Container container in Containers)

@@ -47,6 +47,45 @@ namespace kontejnery
 						firstShip.Containers.RemoveAt(locationOfContainer);
 						secondShip.AddContainer(container);
 				}
+
+				public Container findContainerById(string ID)
+				{
+					foreach (Ship ship in Ships)
+					{
+						foreach (Container container in ship.Containers)
+						{
+							if (ID == container.CustomId)
+							{
+								return container;
+							}
+						}
+					}
+					return null;
+				}
+
+				public Ship findShipByName(string name)
+				{
+					foreach (Ship ship in Ships)
+					{
+						if (name == ship.Name)
+						{
+							return ship;
+						}
+					}
+					return null;
+				}
+
+				public Ship findShipByContainer(Container container)
+				{
+					foreach (Ship ship in Ships)
+					{
+						if (ship.Containers.Contains(container))
+						{
+							return ship;
+						}
+					}
+					return null;
+				}
 		}
 
 }
