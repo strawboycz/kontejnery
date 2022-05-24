@@ -38,13 +38,15 @@ namespace kontejnery
 								//Console.WriteLine($"\nNo more boxes can fit into \n{containers[i]}");
 						}
 
-						Ship ship1 = new Ship("ship1");
+						Ship dock = new Ship("Dock");
+						Ship ship1 = new Ship("Ship1");
 						ship1.AddContainer(containers[0]);
-						Ship ship2 = new Ship("ship2");
+						Ship ship2 = new Ship("Ship2");
 						ship2.AddContainer(containers[1]);
-						Ship ship3 = new Ship("ship3");
+						Ship ship3 = new Ship("Ship3");
 						ship3.AddContainer(containers[2]);
 						Port port = new Port();
+						port.AddShip(dock, 0);
 						port.AddShip(ship1, new Random(DateTime.Now.Millisecond).Next(100, 450));
 						port.AddShip(ship2, new Random(DateTime.Now.Millisecond).Next(100, 450));
 						port.AddShip(ship3, new Random(DateTime.Now.Millisecond).Next(100, 450));
@@ -59,6 +61,8 @@ namespace kontejnery
 										Console.WriteLine(Texts.helpToPrint);
 										continue;
 								}
+
+								string selectedId;
 								switch (action)
 								{
 										case "1":
@@ -67,7 +71,7 @@ namespace kontejnery
 
 														if (ship.Containers.Count > 0)
 														{
-																Console.WriteLine($"Ship {port.Ships.IndexOf(ship) + 1}:");
+																Console.WriteLine($"{ship.Name}:");
 																Console.WriteLine();
 														}
 														Console.WriteLine(ship);
@@ -75,12 +79,12 @@ namespace kontejnery
 												break;
 										case "2":
 												Console.Write("Enter ID of container you want to move:");
-												var selectedId = Console.ReadLine();
+												selectedId = Console.ReadLine();
 												var selectedContiner = port.findContainerById(selectedId);
 												if (selectedContiner == null)
 												{
-													Console.WriteLine("This ID does not exist");
-													continue;
+														Console.WriteLine("This ID does not exist");
+														continue;
 												}
 
 												Console.Write("Enter name of ship you want the container moved to:");
@@ -88,15 +92,34 @@ namespace kontejnery
 												var selectedShip = port.findShipByName(selectedShipName);
 												if (selectedShip == null)
 												{
-													Console.WriteLine("This name does not exist");
-													continue;
+														Console.WriteLine("This name does not exist");
+														continue;
 												}
 
 												var shipContainingContainer = port.findShipByContainer(selectedContiner);
-												port.MoveContainer(shipContainingContainer,selectedContiner,selectedShip);
+												if (shipContainingContainer == null)
+												{
+														Console.WriteLine("No ship contains this container");
+														continue;
+												}
+												port.MoveContainer(shipContainingContainer, selectedContiner, selectedShip);
 												break;
 										case "3":
-
+												Console.WriteLine("Enter ID of container you want to unload");
+												selectedId = Console.ReadLine();
+												selectedContiner = port.findContainerById(selectedId);
+												if (selectedContiner == null)
+												{
+													Console.WriteLine("This ID does not exist");
+													continue;
+												}
+												shipContainingContainer = port.findShipByContainer(selectedContiner);
+												if (shipContainingContainer == null)
+												{
+													Console.WriteLine("No ship contains this container");
+													continue;
+												}
+												port.MoveContainer(shipContainingContainer, selectedContiner, port.Ships[0]);
 												break;
 								}
 						}
