@@ -123,8 +123,8 @@ namespace kontejnery
 												break;
 										default:
 											Console.WriteLine("This action does not exist");
+											
 											continue;
-											break;
 								}
 						}
 
